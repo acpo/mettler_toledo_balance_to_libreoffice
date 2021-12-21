@@ -1,0 +1,15 @@
+Sub Main
+	oScriptProvider = ThisComponent.getScriptProvider()
+	oScript = oScriptProvider.getScript("vnd.sun.star.script:dummytry.py$Dummy?language=Python&location=user")
+	weight = oScript.invoke(array(), array(), array())
+
+	oActiveSheet = ThisComponent.getCurrentController().getActiveSheet()
+	oSelx = ThisComponent.getCurrentSelection()
+	If oSelx.supportsService("com.sun.star.sheet.SheetCell") Then
+		oSelx.setValue(weight)
+		address = oSelx.getCellAddress()
+		nextCell = oActiveSheet.getCellByPosition(address.Column + 1, address.Row)
+		ThisComponent.CurrentController.select(nextCell)
+	End If
+End Sub
+
