@@ -9,6 +9,8 @@ LOscript.txt needs to get entered as a Standard script in the LO Calc Macro Edit
 Currently only a dummy script is in place.  Any Python script for reading a Mettler Balance will work as long as you end with `return` of the variable holding the mass and include the final line `g_exportedScripts = (Dummy,)`  where Dummy is the name of *def*.  
 Python script needs to be in ~/.config/libreoffice/4/user/Scripts/python (Linux) %APPDATA%\LibreOffice\4\user\Scripts\python (Windows) or $HOME/.config/libreoffice/4/user/Scripts/python (Mac)  {you might have to create the Scripts/python folder}  
 You may need to install the python script provider  `sudo apt-get install libreoffice-script-provider-python`  
+Permissions for serial ports are not automatically granted to users.  On Ubuntu, check `groups ${USER}` to see if you are in the *dialout* group.  If not, you can add yourself `sudo gpasswd --add ${USER} dialout`.  Logout and log back in to complete the change.  On Raspbian remember that the serial port needs to be activated `enable_uart=1` in the /boot/config.txt.  The equivalent for adding to dialout is `sudo usermod -a -G dialout pi`, also need logout/in cycle.  
+
 ### Thanks  
 Thanks to two older links that provided guidance.  
 http://christopher5106.github.io/office/2015/12/06/openoffice-libreoffice-automate-your-office-tasks-with-python-macros.html  
