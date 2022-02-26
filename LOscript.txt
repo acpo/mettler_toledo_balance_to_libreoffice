@@ -1,8 +1,11 @@
 Sub Main
+REM call to the Python script and definition of the returned value
 	oScriptProvider = ThisComponent.getScriptProvider()
-	oScript = oScriptProvider.getScript("vnd.sun.star.script:dummytry.py$Dummy?language=Python&location=user")
+	oScript = oScriptProvider.getScript("vnd.sun.star.script:balance_read_mettler.py$get_mass?language=Python&location=user")
 	weight = oScript.invoke(array(), array(), array())
 
+REM below the active cell is identified, the weight written to it, and the 
+REM active cell moved by one to the right
 	oActiveSheet = ThisComponent.getCurrentController().getActiveSheet()
 	oSelx = ThisComponent.getCurrentSelection()
 	If oSelx.supportsService("com.sun.star.sheet.SheetCell") Then
