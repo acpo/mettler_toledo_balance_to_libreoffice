@@ -2,7 +2,7 @@
 Python and LibreOffice scripts to read a Mettler Toledo balance into a spreadsheet.
 
 ## Overview
-The goal is to read balance data into a spreadsheet.  I have another repository that uses Excel and depends on xlWings for the same task.  This version uses LibreOffice so that it is open-source and suitable for more than just Windows.  Development was on Ubuntu and Lime Linux.  In principle the files should work on any system that has LibreOffice and Python versions.    
+The goal is to read balance data into a spreadsheet.  I have [another repository](https://github.com/acpo/mettler_toledo_balance_to_excel) that uses Excel and depends on xlWings for the same task.  This version uses LibreOffice so that it is open-source and suitable for more than just Windows.  Development was on Lime Linux (v19.3 32-bit on an Intel Atom D525).  In principle the files should work on any system that has LibreOffice and Python versions.    
 The choice to mix LO Basic and Python is driven by easy already solved communication with the balance in Python via [PySerial](https://pyserial.readthedocs.io/en/latest/) (there are Debian/Ubuntu packages “python-serial” and “python3-serial” as well as Windows versions).  However, the Python interaction with LO Calc files is difficult if you want to put data in the currently active cell and then increment the position.  The LO Basic commands were much easier.  The only challenge is to make LO call Python and return data.  
 ## Files  
 The fully working example uses the three files:
