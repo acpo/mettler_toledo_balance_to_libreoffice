@@ -10,6 +10,7 @@ The fully working example uses the three files:
 2. *balance_read_mettler.py*  Any Python script for reading a Mettler Balance will work as long as you end with `return` of the variable holding the mass and include the final line `g_exportedScripts = (Dummy,)`  where Dummy is the name of the *def* that collects the data from the balance.  
 Python script must be in `~/.config/libreoffice/4/user/Scripts/python` (Linux) `%APPDATA%\LibreOffice\4\user\Scripts\python` (Windows) or `$HOME/.config/libreoffice/4/user/Scripts/python` (Mac)  {you might have to create the Scripts/python folder}  
 3.  *ReadMettlerToSheet.ods* This spreadsheet is a minimal working example containing a button that calls the macro.  Remember the macro is typically not stored in the spreadsheet.    
+
 You may need to install the python script provider  `sudo apt-get install libreoffice-script-provider-python` to make the Python/LO connection work.  
 Permissions for serial ports are not automatically granted to users on Linux-like operationg systems.  On Ubuntu, check `groups ${USER}` to see if you are in the *dialout* group.  If not, you can add yourself `sudo gpasswd --add ${USER} dialout`.  Logout and log back in to complete the change.  On Raspbian remember that the serial port needs to be activated `enable_uart=1` in the /boot/config.txt.  The equivalent for adding to dialout is `sudo usermod -a -G dialout pi`, also need logout/in cycle.  
 
