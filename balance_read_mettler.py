@@ -26,7 +26,7 @@ def get_mass():
     ser.write(b'\nSI\n')
     time.sleep(1)  #give moment for balance to settle
     
-    value = ser.read(ser.in_waiting())
+    value = ser.read(ser.in_waiting)  #changed from (ser.in_waiting()) due to PySerial updates
     value = value.decode('utf-8')
     value = value.split('\n')[1][:-1]
 
