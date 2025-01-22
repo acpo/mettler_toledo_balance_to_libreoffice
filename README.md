@@ -1,4 +1,4 @@
-# Read a mettler Toledo balance mass into Libreoffice
+# Read a Mettler Toledo balance mass into Libreoffice
 Python and LibreOffice scripts to read a Mettler Toledo balance into a spreadsheet.
 
 ## Overview
